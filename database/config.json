@@ -1,0 +1,37 @@
+{
+  "remoteSubLinks": [
+    {
+      "name": "飞鸟",
+      "icon": "😽",
+      "iepl": true,
+      "level": 1,
+      "type": [
+        "trojan"
+      ],
+      "countrys": [
+        "Singapore",
+        "Japan"
+      ],
+      "url": "https://fba02.fbsubcn01.cc:2096/flydsubal/2bk96h2pu5aylabj?clash=1&extend=1"
+    },
+    {
+      "name": "闪电猫",
+      "icon": "🐯",
+      "iepl": true,
+      "level": 0,
+      "type": [
+        "ss"
+      ],
+      "countrys": [
+        "Singapore",
+        "Japan"
+      ],
+      "url": "https://fba02.fbsubcn01.cc:2096/flydsubal/2bk96h2pu5aylabj?clash=1&extend=1"
+    }
+  ],
+  "defaultGroup": {
+    "type": "fallback",
+    "url": "http://www.gstatic.com/generate_204",
+    "interval": 305
+  }
+}

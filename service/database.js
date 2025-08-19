@@ -17,14 +17,14 @@ const readTestConfig = () => {
   return YAML.parse(fs.readFileSync(templatePath, 'utf-8'));
 };
 
-const readRemoteSubLinks = () => {
-  const filePath = getFilePath('database/data.json');
-  return fs.readJSONSync(filePath).remoteSubLinks;
+const readConfig = () => {
+  const filePath = getFilePath('database/config.json');
+  return fs.readJSONSync(filePath);
 };
 
 module.exports = {
   getFilePath,
   readTemplateJSON,
-  readRemoteSubLinks,
+  readConfig,
   readTestConfig
 };
