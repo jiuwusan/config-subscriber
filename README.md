@@ -14,6 +14,7 @@ docker push localhost/$project_name/$image_tag_name
 
 # 删除构建 builder 缓存
 docker builder prune -f
+docker system prune -f
 
-# 运行
-docker run -itd -e TZ=Asia/Shanghai -e DELUGE_LOGLEVEL=error --network=wk --name=config-subscriber-server --restart=always config-subscriber
+# 运行 
+docker run -itd -e TZ=Asia/Shanghai -e DELUGE_LOGLEVEL=error --network=wk --name=config-subscriber-server --restart=always config-subscriber:1.0.0
