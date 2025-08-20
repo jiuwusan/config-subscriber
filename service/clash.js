@@ -20,6 +20,9 @@ const createConfig = async () => {
     let proxies = (await fetchSubLink(current.url)).proxies;
     if (proxies?.length > 0) {
       proxies = proxies.filter(item => current.type.includes(item.type) && !!current.countrys.find(country => item.name.includes(country)));
+      proxies.sort((a, b) => {
+        return current.countrys.findIndex(country => a.name.includes(country)) - current.countrys.findIndex(country => b.name.includes(country));
+      });
       proxies = proxies.map(item => {
         return {
           ...item,
@@ -29,12 +32,9 @@ const createConfig = async () => {
             .replace(/Japan/gi, '日本')
         };
       });
-      proxies.sort((a, b) => {
-        return current.countrys.findIndex(country => a.name.includes(country)) - current.countrys.findIndex(country => b.name.includes(country));
-      });
       // 默认第二项作为默认代理
       proxies.length > 1 && ([proxies[0], proxies[1]] = [proxies[1], proxies[0]]);
-      current.groupName = `${current.icon}${current.name} 机场`;
+      current.groupName = `${current.icon} ${current.name} 机场`;
       current.proxieNames = proxies.map(item => item.name);
       template.proxies.push(...proxies);
       template['proxy-groups'].push({ name: current.groupName, ...config.defaultGroup, proxies: current.proxieNames });

@@ -4,7 +4,7 @@
       "name": "飞鸟",
       "icon": "😽",
       "iepl": true,
-      "level": 2,
+      "level": 0,
       "type": ["trojan"],
       "countrys": ["Singapore", "Japan"],
       "url": "https://fba02.fbsubcn01.cc:2096/flydsubal/2bk96h2pu5aylabj?clash=1&extend=1"
@@ -13,7 +13,7 @@
       "name": "闪电猫",
       "icon": "🐯",
       "iepl": true,
-      "level": 1,
+      "level": 2,
       "type": ["ss"],
       "countrys": ["新加坡", "日本"],
       "url": "https://scdy03.scsub.com/apiv2/wnz1a6cfdkuhwnoc?clash=1&extend=1"
@@ -22,7 +22,7 @@
       "name": "OuO",
       "icon": "🐧",
       "iepl": true,
-      "level": 0,
+      "level": 1,
       "type": ["ss"],
       "countrys": ["Singapore", "Japan"],
       "url": "https://oss5.cauenvao.click/api/v1/client/subscribe?token=d5ddddda1c5b973534b24a6de734bfee"
