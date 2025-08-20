@@ -156,12 +156,12 @@ proxy-groups:
   - name: 🚊 中转
     type: fallback
     url: "http://www.gstatic.com/generate_204"
-    interval: 305
+    interval: 1215
     proxies: []
   - name: ✈ 专线
     type: fallback
     url: "http://www.gstatic.com/generate_204"
-    interval: 305
+    interval: 1215
     proxies: []
 rules:
   # user rules
