@@ -9,6 +9,7 @@ const fetchSubLink = async url => {
     }
   });
   let content = await result.text();
+  console.log('远程订阅结果:', content);
   return YAML.parse(content);
 };
 
