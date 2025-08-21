@@ -3,9 +3,7 @@ const router = new Router();
 const clash = require('../service/clash');
 const query = async ctx => {
   const { type = 'Clash', view = '0' } = ctx.query;
-  if (view === '1') {
-    ctx.set('Content-Type', 'text/plain; charset=utf-8');
-  } else {
+  if (view !== '1') {
     ctx.set('Content-disposition', `attachment; filename=${type}_${Date.now()}.yaml`);
     ctx.set('Content-type', 'application/x-yaml');
   }
