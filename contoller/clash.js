@@ -9,6 +9,6 @@ const query = async ctx => {
   ctx.body = await clash.createConfig(type);
 };
 
-router.get('/query', query);
+router.get('/config', query);
 
 module.exports = router;

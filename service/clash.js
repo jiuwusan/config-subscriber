@@ -3,14 +3,19 @@ const database = require('./database');
 
 const fetchSubLink = async url => {
   // return database.readTestConfig();
-  const result = await fetch(url, {
-    headers: {
-      'User-Agent': 'clash.meta'
-    }
-  });
-  let content = await result.text();
-  console.log('远程订阅结果:', content);
-  return YAML.parse(content);
+  try {
+    const result = await fetch(url, {
+      headers: {
+        'User-Agent': 'clash.meta'
+      }
+    });
+    let content = await result.text();
+    console.log('远程订阅获取成功:', url);
+    return YAML.parse(content);
+  } catch (error) {
+    console.log('远程订阅获取失败:', url);
+    return { proxies: [] }
+  }
 };
 
 const createConfig = async () => {
