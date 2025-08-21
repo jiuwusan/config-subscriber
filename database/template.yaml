@@ -66,6 +66,12 @@ proxy-groups:
     type: select
     proxies:
       - ✈ 专线
+  - name: 🐟 漏网之鱼
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - 🚊 中转
+      - 🎯 全球直连
   - name: 📲 电报消息
     type: select
     proxies:
@@ -147,12 +153,6 @@ proxy-groups:
     proxies:
       - DIRECT
       - REJECT
-  - name: 🐟 漏网之鱼
-    type: select
-    proxies:
-      - 🚀 节点选择
-      - 🚊 中转
-      - 🎯 全球直连
   - name: 🚊 中转
     type: fallback
     url: "http://www.gstatic.com/generate_204"
