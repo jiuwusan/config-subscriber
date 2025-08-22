@@ -17,6 +17,11 @@ const readConfig = type => {
   return fs.readJSONSync(filePath);
 };
 
+const readCountrys = () => {
+  const filePath = getFilePath(`countrys.json`);
+  return fs.readJSONSync(filePath);
+};
+
 const readTestConfig = () => {
   const templatePath = getFilePath('test/FlyingBird.yaml');
   return YAML.parse(fs.readFileSync(templatePath, 'utf-8'));
@@ -26,5 +31,6 @@ module.exports = {
   getFilePath,
   readTemplateJSON,
   readConfig,
-  readTestConfig
+  readTestConfig,
+  readCountrys
 };

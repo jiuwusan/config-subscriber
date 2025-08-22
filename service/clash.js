@@ -18,9 +18,18 @@ const fetchSubLink = async (name, url) => {
   return { proxies: [] };
 };
 
+const renameProxieName = (countrys, name) => {
+  const country = countrys.find(item => name.includes(item.en) || name.includes(item.zh));
+  return name
+    .replace(/-+/gi, ' ')
+    .replace(new RegExp(`${country.flag} +`, 'gi'), '')
+    .replace(new RegExp(`(${country.en}|${country.zh})`, 'gi'), `${country.flag} ${country.zh}`);
+};
+
 const createConfig = async type => {
   const template = await database.readTemplateJSON(type);
   const config = await database.readConfig(type);
+  const countrys = await database.readCountrys(type);
   for (let index = 0; index < config.remoteSubLinks.length; index++) {
     const current = config.remoteSubLinks[index];
     if (current.disabled) {
@@ -35,10 +44,7 @@ const createConfig = async type => {
       proxies = proxies.map(item => {
         return {
           ...item,
-          name: `${current.name} ${item.name}`
-            .replace(/-+/gi, ' ')
-            .replace(/Singapore/gi, '新加坡')
-            .replace(/Japan/gi, '日本')
+          name: renameProxieName(countrys, `${current.name} ${item.name}`)
         };
       });
       // 默认第二项作为默认代理
