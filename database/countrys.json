@@ -21,5 +21,6 @@
   { "zh": "土耳其", "en": "Turkey", "code": "TR", "flag": "🇹🇷" },
   { "zh": "新加坡", "en": "Singapore", "code": "SG", "flag": "🇸🇬" },
   { "zh": "香港", "en": "Hong Kong", "code": "HK", "flag": "🇭🇰" },
-  { "zh": "台湾", "en": "Taiwan", "code": "TW", "flag": "🇹🇼" }
+  { "zh": "台湾", "en": "Taiwan", "code": "TW", "flag": "🇹🇼" },
+  { "zh": "马来西亚", "en": "Malaysia", "code": "MY", "flag": "🇲🇾" }
 ]
