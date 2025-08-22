@@ -66,6 +66,12 @@ proxy-groups:
     type: select
     proxies:
       - ✈ 专线
+  - name: ⚠ 重型货机
+    type: select
+    proxies:
+      - 🚊 中转
+      - ✈ 专线
+      - 🎯 全球直连
   - name: 🐟 漏网之鱼
     type: select
     proxies:
@@ -79,18 +85,15 @@ proxy-groups:
   - name: 📹 油管视频
     type: select
     proxies:
-      - 🚊 中转
-      - ✈ 专线
+      - ⚠ 重型货机
   - name: 🎥 奈飞视频
     type: select
     proxies:
-      - 🚊 中转
-      - ✈ 专线
+      - ⚠ 重型货机
   - name: 📺 巴哈姆特
     type: select
     proxies:
-      - 🚊 中转
-      - ✈ 专线
+      - ⚠ 重型货机
   - name: 📺 哔哩哔哩
     type: select
     proxies:
@@ -98,8 +101,7 @@ proxy-groups:
   - name: 🌍 国外媒体
     type: select
     proxies:
-      - 🚊 中转
-      - ✈ 专线
+      - ⚠ 重型货机
   - name: 🌏 国内媒体
     type: select
     proxies:
@@ -122,8 +124,7 @@ proxy-groups:
   - name: Ⓜ️ 微软服务
     type: select
     proxies:
-      - 🚊 中转
-      - ✈ 专线
+      - ⚠ 重型货机
       - 🎯 全球直连
   - name: 🍎 苹果服务
     type: select
