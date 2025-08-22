@@ -1,7 +1,7 @@
 const YAML = require('yaml');
 const database = require('./database');
 
-const fetchSubLink = async url => {
+const fetchSubLink = async (name, url) => {
   // return database.readTestConfig();
   try {
     const result = await fetch(url, {
@@ -10,20 +10,23 @@ const fetchSubLink = async url => {
       }
     });
     let content = await result.text();
-    console.log('远程订阅获取成功:', url);
+    console.log(`${name} 订阅获取成功：${url}`);
     return YAML.parse(content);
   } catch (error) {
-    console.log('远程订阅获取失败:', url);
-    return { proxies: [] }
+    console.log(`${name} 订阅获取失败：${url}`);
   }
+  return { proxies: [] };
 };
 
-const createConfig = async () => {
-  const template = await database.readTemplateJSON();
-  const config = await database.readConfig();
+const createConfig = async type => {
+  const template = await database.readTemplateJSON(type);
+  const config = await database.readConfig(type);
   for (let index = 0; index < config.remoteSubLinks.length; index++) {
     const current = config.remoteSubLinks[index];
-    let proxies = (await fetchSubLink(current.url)).proxies;
+    if (current.disabled) {
+      continue;
+    }
+    let proxies = (await fetchSubLink(current.name, current.url)).proxies;
     if (proxies?.length > 0) {
       proxies = proxies.filter(item => current.type.includes(item.type) && !!current.countrys.find(country => item.name.includes(country)));
       proxies.sort((a, b) => {

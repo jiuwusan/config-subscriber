@@ -1,0 +1,27 @@
+{
+  "remoteSubLinks": [
+    {
+      "name": "飞鸟",
+      "icon": "😽",
+      "iepl": true,
+      "level": 0,
+      "type": ["trojan"],
+      "countrys": ["Singapore", "Japan"],
+      "url": "https://fba02.fbsubcn01.cc:2096/flydsubal/2bk96h2pu5aylabj?clash=1&extend=1"
+    },
+    {
+      "name": "KTM",
+      "icon": "🐞",
+      "iepl": false,
+      "level": 0,
+      "type": ["vmess"],
+      "countrys": ["新加坡", "香港", "日本"],
+      "url": "https://ktm.lyf520.xyz/api/v1/client/subscribe?token=1fb728620b2012d039ec2bb65e359d0c"
+    }
+  ],
+  "defaultGroup": {
+    "type": "fallback",
+    "url": "http://www.gstatic.com/generate_204",
+    "interval": 305
+  }
+}

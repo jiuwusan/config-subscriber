@@ -4,22 +4,22 @@ const YAML = require('yaml');
 
 const getFilePath = (filename = '') => {
   const rootPath = path.dirname(__dirname);
-  return path.join(rootPath, filename);
+  return path.join(rootPath, 'database', filename);
 };
 
-const readTemplateJSON = () => {
-  const templatePath = getFilePath('database/template.yaml');
+const readTemplateJSON = type => {
+  const templatePath = getFilePath(`${type}/template.yaml`);
   return YAML.parse(fs.readFileSync(templatePath, 'utf-8'));
+};
+
+const readConfig = type => {
+  const filePath = getFilePath(`${type}/config.json`);
+  return fs.readJSONSync(filePath);
 };
 
 const readTestConfig = () => {
-  const templatePath = getFilePath('database/FlyingBird.yaml');
+  const templatePath = getFilePath('test/FlyingBird.yaml');
   return YAML.parse(fs.readFileSync(templatePath, 'utf-8'));
-};
-
-const readConfig = () => {
-  const filePath = getFilePath('database/config.json');
-  return fs.readJSONSync(filePath);
 };
 
 module.exports = {
