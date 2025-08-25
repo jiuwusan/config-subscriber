@@ -37,10 +37,5 @@
       "link": "https://ktm.lyf520.xyz/api/v1/client/subscribe?token=1fb728620b2012d039ec2bb65e359d0c",
       "interval": 35
     }
-  ],
-  "defaultGroup": {
-    "type": "fallback",
-    "url": "http://www.gstatic.com/generate_204",
-    "interval": 305
-  }
+  ]
 }
