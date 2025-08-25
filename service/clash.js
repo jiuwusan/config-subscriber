@@ -52,7 +52,9 @@ const createConfig = async type => {
       current.groupName = `${current.icon} ${current.name} 机场`;
       current.proxieNames = proxies.map(item => item.name);
       template.proxies.push(...proxies);
-      template['proxy-groups'].push({ name: current.groupName, ...config.defaultGroup, proxies: current.proxieNames });
+      const currentGroup = { name: current.groupName, ...config.defaultGroup, proxies: current.proxieNames };
+      current.interval && (currentGroup.interval = current.interval);
+      template['proxy-groups'].push(currentGroup);
     }
   }
   const v1 = config.remoteSubLinks
