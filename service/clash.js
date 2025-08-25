@@ -1,19 +1,19 @@
 const YAML = require('yaml');
 const database = require('./database');
 
-const fetchSubLink = async (name, url) => {
+const fetchSubLink = async (name, link) => {
   // return database.readTestConfig();
   try {
-    const result = await fetch(url, {
+    const result = await fetch(link, {
       headers: {
         'User-Agent': 'clash.meta'
       }
     });
     let content = await result.text();
-    console.log(`${name} 订阅获取成功：${url}`);
+    console.log(`${name} 订阅获取成功：${link}`);
     return YAML.parse(content);
   } catch (error) {
-    console.log(`${name} 订阅获取失败：${url}`);
+    console.log(`${name} 订阅获取失败：${link}`);
   }
   return { proxies: [] };
 };
@@ -35,7 +35,7 @@ const createConfig = async type => {
     if (current.disabled) {
       continue;
     }
-    let proxies = (await fetchSubLink(current.name, current.url)).proxies;
+    let proxies = (await fetchSubLink(current.name, current.link)).proxies;
     if (proxies?.length > 0) {
       proxies = proxies.filter(item => current.type.includes(item.type) && !!current.countrys.find(country => item.name.includes(country)));
       proxies.sort((a, b) => {

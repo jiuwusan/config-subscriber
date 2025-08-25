@@ -7,7 +7,7 @@
       "level": 0,
       "type": ["ss"],
       "countrys": ["新加坡", "马来西亚"],
-      "url": "https://scdy03.scsub.com/apiv2/wnz1a6cfdkuhwnoc?clash=1&extend=1"
+      "link": "https://scdy03.scsub.com/apiv2/wnz1a6cfdkuhwnoc?clash=1&extend=1"
     },
     {
       "name": "KTM",
@@ -16,7 +16,7 @@
       "level": 0,
       "type": ["vmess"],
       "countrys": ["新加坡", "香港", "澳大利亚", "印度"],
-      "url": "https://ktm.lyf520.xyz/api/v1/client/subscribe?token=1fb728620b2012d039ec2bb65e359d0c",
+      "link": "https://ktm.lyf520.xyz/api/v1/client/subscribe?token=1fb728620b2012d039ec2bb65e359d0c",
       "interval": 35
     }
   ],
