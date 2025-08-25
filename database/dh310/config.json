@@ -16,7 +16,8 @@
       "level": 0,
       "type": ["vmess"],
       "countrys": ["新加坡", "香港", "日本"],
-      "url": "https://ktm.lyf520.xyz/api/v1/client/subscribe?token=1fb728620b2012d039ec2bb65e359d0c"
+      "url": "https://ktm.lyf520.xyz/api/v1/client/subscribe?token=1fb728620b2012d039ec2bb65e359d0c",
+      "interval": 35
     }
   ],
   "defaultGroup": {
